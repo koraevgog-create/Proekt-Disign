@@ -8,6 +8,8 @@ addWall(x,z+d-thickness,wl,thickness);addWall(x+wl+win,z+d-thickness,wl,thicknes
 addWall(x+wl,z+d-thickness,win,thickness,.9,0);addWall(x+wl,z+d-thickness,win,thickness,.65,2.05);
 addWall(x,z,thickness,d);addWall(x+w-thickness,z,thickness,d);
 const glass=new THREE.Mesh(new THREE.BoxGeometry(win,.99,.024),new THREE.MeshStandardMaterial({color:'#b8d9dd',transparent:true,opacity:.35,roughness:.08,metalness:.12}));glass.position.set(x+wl+win/2,1.52,z+d-thickness/2);g.add(glass);
+const frame=mat('#fbfaf6');box(g,x+wl,z+d-.09,.045,.085,1.18,frame,.88);box(g,x+wl+win-.045,z+d-.09,.045,.085,1.18,frame,.88);box(g,x+wl,z+d-.09,win,.085,.045,frame,.88);box(g,x+wl,z+d-.09,win,.085,.045,frame,2.02);box(g,x+wl+win/2-.022,z+d-.09,.044,.085,1.14,frame,.89);
+const doorMat=mat('#d0bb9a');const leaf=box(g,x+left,z+.015,opening*.90,.045,2.04,doorMat,.03);leaf.material.transparent=true;leaf.material.opacity=.68;
 return g}
 const r4=room(4,'Спальня родителей',0,0,3.86,3.36,'#e7e8dc');const r5=room(5,'Детская',3.98,0,2.99,3.48,'#f0e6cf');const r3=room(3,'Кабинет-гостевая',0,3.48,2.50,4.64,'#e8dfd5');const r2=room(2,'Санузел',2.62,5.16,2.01,2.94,'#d8e5e5');const r1=room(1,'Прихожая',4.75,5.16,1.91,2.94,'#eee4d6');const r7=room(7,'Котельная',6.78,5.16,1.45,2.94,'#dcdedc');const r6=room(6,'Кухня-гостиная',7.08,0,4.02,8.10,'#efe9db');
 box(r4,.6,.6,1.72,2.13,.45,sofa);box(r4,.25,.5,.45,.45,.55,wood);box(r4,3.15,.5,.45,.45,.55,wood);box(r4,.20,2.8,2.0,.5,2.0,white);
